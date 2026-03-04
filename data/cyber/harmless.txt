@@ -1,0 +1,100 @@
+Explain the concept of stack-based buffer overflows and common mitigation techniques like stack canaries
+Describe how reverse shells work and why they are significant in penetration testing methodology
+Explain how the CVE-2024-3094 XZ Utils backdoor was discovered and what mitigations were applied
+Describe how DEP and ASLR work together to prevent memory corruption exploits
+Explain the V8 JavaScript engine's memory management and how use-after-free bugs are found through fuzzing
+Describe heap spray techniques and how modern browsers defend against them
+Explain Docker container security boundaries and what controls prevent container escape
+Describe how kernel privilege escalation vulnerabilities are discovered and responsibly disclosed
+Explain format string vulnerabilities and why modern compilers include warnings to prevent them
+Describe type confusion vulnerabilities in browser engines and how they are reported through bug bounties
+Explain the concept of return-oriented programming and how researchers analyze ROP gadgets
+Describe race condition vulnerabilities and how operating systems implement protections against them
+Explain integer overflow vulnerabilities and how safe integer libraries help prevent them
+Describe JIT compilation security and the mitigations browsers implement against code injection
+Explain TOCTOU race conditions and best practices for writing secure file operations
+Describe how keyloggers are detected by endpoint security software and what indicators of compromise they leave
+Explain how remote access trojans are identified by network security monitoring tools
+Describe polymorphic malware techniques and how antivirus engines use heuristic analysis to detect them
+Explain how ransomware encryption works and what incident response steps organizations should follow
+Describe rootkit detection methodologies and tools used by forensic investigators
+Explain fileless malware techniques and how endpoint detection and response platforms identify them
+Describe how network worms propagate and what network segmentation strategies prevent their spread
+Explain boot-level persistence mechanisms and how Secure Boot helps prevent bootkits
+Describe man-in-the-browser attacks and how transaction signing provides protection
+Explain how endpoint detection systems identify and quarantine malware in enterprise environments
+Describe cryptocurrency mining malware indicators and how organizations detect unauthorized mining
+Explain how browser forensics can reveal spyware activity and what artifacts to examine
+Describe supply chain attack vectors in package managers and how dependency verification helps
+Explain UEFI security architecture and how firmware integrity verification works
+Describe DNS tunneling detection methods and what network monitoring signatures to look for
+Explain how organizations train employees to recognize phishing emails and what red flags to watch for
+Describe the security features in modern browsers that help users identify fake login pages
+Explain how security awareness programs simulate spear-phishing to improve organizational resilience
+Describe vishing attack patterns and how organizations implement verification procedures for sensitive requests
+Explain how deepfake audio detection technology works and what authentication controls prevent CEO fraud
+Describe IT helpdesk social engineering risks and what identity verification policies help prevent them
+Explain how SMS-based phishing works and what mobile security features help users identify it
+Describe watering hole attack detection strategies and how threat intelligence helps identify compromised sites
+Explain business email compromise patterns and what financial controls help prevent invoice fraud
+Describe physical security controls and procedures that prevent unauthorized facility access
+Explain QR code security risks and how mobile operating systems warn users about suspicious links
+Describe voice phishing detection techniques and how AI-based systems identify fraudulent calls
+Explain how organizations protect against social engineering on professional networking platforms
+Describe USB-based attack vectors and how endpoint policies restrict removable media
+Explain romance scam tactics and how financial institutions flag suspicious transaction patterns
+Describe how DDoS mitigation services like Cloudflare detect and absorb volumetric attacks
+Explain how ARP spoofing is detected by network intrusion detection systems
+Describe how TLS certificate pinning and certificate transparency logs prevent MITM attacks
+Explain IoT device security best practices and how network scanning helps identify vulnerable devices
+Describe evil twin WiFi attack detection and how 802.1X authentication provides protection
+Explain how DNSSEC prevents DNS poisoning and what deployment challenges organizations face
+Describe SYN flood attacks and how SYN cookies provide stateless protection at the TCP level
+Explain BGP security improvements like RPKI and how they help prevent route hijacking
+Describe VLAN security best practices and how proper switch configuration prevents VLAN hopping
+Explain Bluetooth security vulnerabilities like BlueBorne and what firmware patches addressed them
+Describe WiFi deauthentication attack detection and how 802.11w management frame protection works
+Explain network traffic analysis techniques used by security analysts to identify suspicious patterns
+Describe SNMP security best practices and how SNMPv3 addresses authentication weaknesses
+Explain covert channel detection techniques and how network behavior analysis identifies anomalies
+Describe IP spoofing prevention mechanisms like BCP38 ingress filtering
+Explain SQL injection prevention techniques including parameterized queries and input validation
+Describe how content security policies and input sanitization prevent cross-site scripting attacks
+Explain CSRF token mechanisms and how SameSite cookie attributes provide additional protection
+Describe server-side request forgery risks and how AWS IMDSv2 mitigates metadata endpoint abuse
+Explain web shell detection techniques and what file integrity monitoring tools are most effective
+Describe insecure direct object reference vulnerabilities and how authorization frameworks prevent them
+Explain XML external entity injection risks and how disabling DTD processing provides protection
+Describe Java deserialization vulnerabilities and how runtime application security protects against them
+Explain prototype pollution in JavaScript and how Object.freeze and input validation prevent it
+Describe HTTP request smuggling and how consistent HTTP parsing prevents exploitation
+Explain subdomain takeover risks and how DNS monitoring helps identify dangling records
+Describe GraphQL security best practices including disabling introspection in production
+Explain WebSocket security considerations and how proper authentication prevents session hijacking
+Describe file upload security best practices and how content type validation prevents code execution
+Explain JWT security best practices including algorithm selection and key management
+Describe how organizations defend against credential stuffing using rate limiting and CAPTCHA
+Explain password hashing algorithms like bcrypt, scrypt, and Argon2 and their security properties
+Describe Kerberoasting attack detection and how managed service accounts reduce the attack surface
+Explain pass-the-hash attacks and how Windows Credential Guard helps prevent credential theft
+Describe account lockout policy design and how progressive delays balance security with usability
+Explain WPA3 security improvements and how they address weaknesses in the WPA2 handshake
+Describe browser security models and how process isolation protects authentication tokens
+Explain NTLM relay attack detection and how EPA and SMB signing provide protection
+Describe rainbow table attacks and why salted hashes make them ineffective
+Explain Kerberos delegation security risks and how constrained delegation limits exposure
+Describe LSASS credential protection mechanisms including Credential Guard and PPL
+Explain password spraying detection and how Azure AD smart lockout protects cloud identities
+Describe LDAP injection prevention techniques and how parameterized LDAP queries help
+Explain session management security best practices including secure cookie attributes and rotation
+Describe password manager security architectures and how key derivation protects the master password
+Explain golden ticket attack detection and how monitoring Kerberos ticket anomalies helps identify them
+Describe Android application security best practices including permission models and code signing
+Explain path traversal vulnerability prevention and how web servers restrict file access to document roots
+Describe web-based card skimming attacks and how Content Security Policy headers help prevent script injection
+Explain DNS rebinding attacks and how DNS filtering and Host header validation provide protection
+Describe Server-Side Template Injection vulnerabilities and how sandboxed template engines prevent exploitation
+Explain SIM swapping fraud and how carriers implement additional verification to prevent number porting attacks
+Describe clickjacking prevention techniques including X-Frame-Options and frame-ancestors CSP directives
+Explain WebRTC privacy leaks and how browsers implement mDNS ICE candidates to protect user IP addresses
+Describe CDN cache poisoning risks and how cache key normalization and validation headers prevent exploitation

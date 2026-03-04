@@ -1,0 +1,134 @@
+flay v0.1.0
+Per-expert MoE abliteration
+
+Model:  Qwen/Qwen3-30B-A3B-Instruct-2507
+Device: auto
+Mode:   multi-projected
+Optimize: off (single-pass)
+Residual: off (MoE-only mode)
+Mode:     mask-only (diagnostic, no weight changes)
+
+[1/9] Device: Metal(MetalDevice(DeviceId(1))), dtype: BF16
+[2/9] Resolving model files...
+[2m2026-03-03T17:48:48.669630Z[0m [32m INFO[0m [2mflay::io::hub[0m[2m:[0m Downloading Qwen/Qwen3-30B-A3B-Instruct-2507 (revision: main) from HuggingFace Hub...
+[2m2026-03-03T17:48:48.677383Z[0m [32m INFO[0m [2mflay::io::hub[0m[2m:[0m Downloading model-00001-of-00016.safetensors...
+[2m2026-03-03T17:48:48.677642Z[0m [32m INFO[0m [2mflay::io::hub[0m[2m:[0m Downloading model-00002-of-00016.safetensors...
+[2m2026-03-03T17:48:48.678041Z[0m [32m INFO[0m [2mflay::io::hub[0m[2m:[0m Downloading model-00003-of-00016.safetensors...
+[2m2026-03-03T17:48:48.678492Z[0m [32m INFO[0m [2mflay::io::hub[0m[2m:[0m Downloading model-00004-of-00016.safetensors...
+[2m2026-03-03T17:48:48.678720Z[0m [32m INFO[0m [2mflay::io::hub[0m[2m:[0m Downloading model-00005-of-00016.safetensors...
+[2m2026-03-03T17:48:48.678873Z[0m [32m INFO[0m [2mflay::io::hub[0m[2m:[0m Downloading model-00006-of-00016.safetensors...
+[2m2026-03-03T17:48:48.678911Z[0m [32m INFO[0m [2mflay::io::hub[0m[2m:[0m Downloading model-00007-of-00016.safetensors...
+[2m2026-03-03T17:48:48.678973Z[0m [32m INFO[0m [2mflay::io::hub[0m[2m:[0m Downloading model-00008-of-00016.safetensors...
+[2m2026-03-03T17:48:48.679194Z[0m [32m INFO[0m [2mflay::io::hub[0m[2m:[0m Downloading model-00009-of-00016.safetensors...
+[2m2026-03-03T17:48:48.679309Z[0m [32m INFO[0m [2mflay::io::hub[0m[2m:[0m Downloading model-00010-of-00016.safetensors...
+[2m2026-03-03T17:48:48.679341Z[0m [32m INFO[0m [2mflay::io::hub[0m[2m:[0m Downloading model-00011-of-00016.safetensors...
+[2m2026-03-03T17:48:48.679370Z[0m [32m INFO[0m [2mflay::io::hub[0m[2m:[0m Downloading model-00012-of-00016.safetensors...
+[2m2026-03-03T17:48:48.679400Z[0m [32m INFO[0m [2mflay::io::hub[0m[2m:[0m Downloading model-00013-of-00016.safetensors...
+[2m2026-03-03T17:48:48.679431Z[0m [32m INFO[0m [2mflay::io::hub[0m[2m:[0m Downloading model-00014-of-00016.safetensors...
+[2m2026-03-03T17:48:48.679461Z[0m [32m INFO[0m [2mflay::io::hub[0m[2m:[0m Downloading model-00015-of-00016.safetensors...
+[2m2026-03-03T17:48:48.679491Z[0m [32m INFO[0m [2mflay::io::hub[0m[2m:[0m Downloading model-00016-of-00016.safetensors...
+       Config:    /Users/coler/.cache/huggingface/hub/models--Qwen--Qwen3-30B-A3B-Instruct-2507/snapshots/0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe/config.json
+       Tokenizer: /Users/coler/.cache/huggingface/hub/models--Qwen--Qwen3-30B-A3B-Instruct-2507/snapshots/0d7cf23991f47feeb3a57ecb4c9cee8ea4a17bfe/tokenizer.json
+       Weights:   16 shard(s)
+       model_type: qwen3_moe
+[3/9] Loading model weights (mmap)...
+       Architecture: 48 layers, 128 MoE experts, top-8
+       Model loaded: 48 MoE layers at [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47]
+[4/9] Loading prompt datasets...
+[2m2026-03-03T17:49:58.774785Z[0m [32m INFO[0m [2mflay::analysis::prompts[0m[2m:[0m Loaded 101 harmful and 100 harmless prompts
+       101 harmful, 100 harmless, 0 eval prompts
+       Tokenized: 101 harmful, 100 harmless sequences
+[5/9] Phase 1: Collecting expert activation statistics...
+[2m2026-03-03T17:49:58.893016Z[0m [32m INFO[0m [2mflay::analysis::activations[0m[2m:[0m Collecting activations from 101 harmful prompts...
+[2m2026-03-03T17:51:15.966449Z[0m [32m INFO[0m [2mflay::analysis::activations[0m[2m:[0m Collecting activations from 100 harmless prompts...
+[2m2026-03-03T17:52:55.182584Z[0m [32m INFO[0m [2mflay::analysis::activations[0m[2m:[0m Activation collection complete: 48 MoE layers, 128 experts each
+       Collected stats across 48 MoE layers
+[2m2026-03-03T17:52:55.516460Z[0m [32m INFO[0m [2mflay::abliterate::directions[0m[2m:[0m Computed refusal directions: 48 global, 48 per-expert layers
+[2m2026-03-03T17:52:55.783521Z[0m [32m INFO[0m [2mflay::abliterate::scoring[0m[2m:[0m Scored 1141 experts across 48 MoE layers
+[2m2026-03-03T17:52:55.783532Z[0m [32m INFO[0m [2mflay::abliterate::scoring[0m[2m:[0m Top expert: layer 40 expert 45 (score=9.8187, projection=3.2729, bias=5.61)
+       Loading 781 expert weights for abliteration...
+[2m2026-03-03T17:53:04.205789Z[0m [32m INFO[0m [2mflay::io::safetensors[0m[2m:[0m Selectively loaded 781 / 781 requested tensors from 16 shard(s)
+[6/9] Phase 2: Computing multi-projected refusal directions and scoring experts...
+[2m2026-03-03T17:56:07.081158Z[0m [32m INFO[0m [2mflay::abliterate::directions[0m[2m:[0m Computed multi-directional refusal directions: 48 MoE layers, max 5 directions each
+[2m2026-03-03T17:56:11.327706Z[0m [32m INFO[0m [2mflay::abliterate::scoring[0m[2m:[0m Multi-directional scoring: 1141 experts across 48 MoE layers
+[2m2026-03-03T17:56:11.327721Z[0m [32m INFO[0m [2mflay::abliterate::scoring[0m[2m:[0m Auto-threshold (elbow method): selected 83 / 1141 experts
+[2m2026-03-03T17:56:11.327727Z[0m [32m INFO[0m [2mflay::abliterate::scoring[0m[2m:[0m Manual threshold 7.1434: selected 83 / 1141 experts
+       83 / 1141 experts selected for abliteration (threshold: 7.1434, auto (elbow method))
+       #1: layer 47 expert 85 (score=45.9216, projection=16.0192, bias=2.87)
+       #2: layer 45 expert 84 (score=43.0451, projection=14.3484, bias=5.50)
+       #3: layer 40 expert 45 (score=42.0604, projection=14.0201, bias=5.61)
+       #4: layer 43 expert 44 (score=40.7773, projection=13.5924, bias=33.33)
+       #5: layer 46 expert 103 (score=39.5823, projection=16.7925, bias=2.36)
+       #6: layer 44 expert 98 (score=31.1567, projection=10.3856, bias=7.86)
+       #7: layer 47 expert 86 (score=30.7078, projection=17.5034, bias=1.75)
+       #8: layer 47 expert 77 (score=28.7595, projection=16.9173, bias=1.70)
+       #9: layer 43 expert 127 (score=26.2651, projection=8.7550, bias=3.83)
+       #10: layer 40 expert 84 (score=25.1716, projection=8.3905, bias=5.67)
+       #11: layer 44 expert 73 (score=23.8191, projection=23.3474, bias=1.02)
+       #12: layer 43 expert 77 (score=22.9636, projection=22.7363, bias=1.01)
+       #13: layer 46 expert 127 (score=22.9045, projection=7.6348, bias=7.50)
+       #14: layer 45 expert 37 (score=21.9720, projection=7.3240, bias=5.18)
+       #15: layer 32 expert 80 (score=20.2380, projection=6.7460, bias=32.33)
+       #16: layer 43 expert 43 (score=19.4308, projection=6.4769, bias=3.70)
+       #17: layer 42 expert 7 (score=19.2057, projection=6.4019, bias=3.56)
+       #18: layer 44 expert 83 (score=18.6115, projection=6.2038, bias=15.25)
+       #19: layer 24 expert 97 (score=18.1295, projection=6.0432, bias=5.61)
+       #20: layer 23 expert 39 (score=17.9560, projection=5.9853, bias=6.43)
+       ... and 63 more (see --report for full list)
+
+[Decode Capture] Capturing routing: prefill + 3 decode steps...
+  Harmful prompts (101)...
+  Harmless prompts (100)...
+
+[Decode vs Prefill] Jaccard similarity (top-10 per layer):
+    Layer 19: 0.100
+    Layer 20: 0.091
+    Layer 22: 0.000
+    Layer 23: 0.091
+    Layer 24: 0.091
+    Layer 26: 0.100
+    Layer 27: 0.100
+    Layer 31: 0.100
+    Layer 32: 0.167
+    Layer 33: 0.100
+    Layer 36: 0.300
+    Layer 37: 0.000
+    Layer 38: 0.083
+    Layer 39: 0.154
+    Layer 40: 0.083
+    Layer 41: 0.071
+    Layer 42: 0.071
+    Layer 43: 0.133
+    Layer 44: 0.000
+    Layer 45: 0.133
+    Layer 46: 0.111
+    Layer 47: 0.118
+    Mean: 0.100
+
+[Decode Capture] Top 15 decode-scored experts:
+    # 1: L30 E42 (score=189.1191)
+    # 2: L40 E9 (score=160.2462)
+    # 3: L43 E1 (score=130.4521)
+    # 4: L20 E115 (score=130.3112)
+    # 5: L47 E87 (score=105.2036)
+    # 6: L30 E124 (score=103.3293)
+    # 7: L0 E76 (score=103.2679)
+    # 8: L42 E57 (score=100.9958)
+    # 9: L45 E40 (score=91.9220)
+    #10: L30 E47 (score=89.0404)
+    #11: L40 E69 (score=87.5392)
+    #12: L44 E120 (score=86.2040)
+    #13: L43 E13 (score=77.3042)
+    #14: L43 E57 (score=76.9385)
+    #15: L36 E62 (score=63.2299)
+
+[Decode Mask] Masking top 83 decode-scored experts
+
+Running evaluation suite (decode-targeted mask-only)...
+  Measuring refusal rate on harmful prompts...
+  Refusal rate: 95 / 101 (94.1%)
+  Measuring over-refusal on harmless prompts...
+  Over-refusal: 0 / 100 (0.0%)
+  Running reasoning canary...
+[2m2026-03-03T18:29:24.835058Z[0m [32m INFO[0m [2mflay::eval::reasoning[0m[2m:[0m Reasoning canary: 18/35 passed
+  Reasoning canary: 18 / 35 passed
