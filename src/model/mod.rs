@@ -1,4 +1,12 @@
 pub mod arch;
 pub mod config;
 pub mod deepseek_config;
+pub mod gated_delta;
+pub mod ops;
 pub mod qwen3_moe;
+pub mod qwen35;
+pub mod qwen35_config;
+pub mod qwen35_directions;
+pub mod qwen35_generate;
+pub mod qwen35_parity;
+pub mod qwen35_steering;
